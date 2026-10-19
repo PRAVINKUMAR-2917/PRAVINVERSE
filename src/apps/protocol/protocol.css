@@ -1,0 +1,40 @@
+.win-body:has(>.protocol-app){padding:0;min-height:0;min-width:0;overflow:auto;container:protocol-window / inline-size}
+.protocol-app{background:linear-gradient(150deg,#071816,#07101c);color:#d9f9e9;width:100%;min-height:100%;padding:clamp(13px,2.3cqw,26px);font-family:inherit;overflow-wrap:anywhere}
+.protocol-app *{box-sizing:border-box}
+.protocol-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid #246e59}
+.protocol-heading h3{font:700 clamp(19px,3.5cqw,29px)/1.2 'Rajdhani',sans-serif;letter-spacing:1.5px;margin:5px 0;color:#81ffcd}
+.protocol-heading p,.protocol-app p{margin:5px 0 0;font-size:12px;line-height:1.65;color:#a4cbbb}
+.protocol-eyebrow,.protocol-tag,.protocol-index{font-size:10px;letter-spacing:1.2px;color:#83b6a8}
+.protocol-rank-mark{border:1px solid #51cfa7;color:#c6ffde;padding:10px;font:800 clamp(17px,3.5cqw,24px) 'Rajdhani',sans-serif;white-space:nowrap}
+.protocol-rank{padding:16px;margin-bottom:17px;border:1px solid #367b62;background:#0f3028}
+.protocol-rank-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;font-family:'Rajdhani',sans-serif;font-size:19px;color:#d4fda8}
+.protocol-rank-meta span{color:#a6d6c0;font-size:15px}
+.protocol-meter{height:10px;background:#153a32;margin-top:12px;border:1px solid #477960;overflow:hidden}
+.protocol-meter>div{background:linear-gradient(90deg,#53d4ab,#d8f595);height:100%;transition:width .3s ease}
+.protocol-app h4{font:700 16px 'Rajdhani',sans-serif;letter-spacing:1px;margin:18px 0 10px;color:#caffaa}
+.protocol-badges{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.protocol-badge{display:flex;align-items:flex-start;gap:12px;border:1px solid #285647;background:#0e2725;padding:13px;min-width:0;border-radius:3px}
+.protocol-badge.earned{border-color:#5fd1a6;background:linear-gradient(120deg,#123d30,#0a2527)}
+.protocol-badge.locked{opacity:.68}
+.protocol-medal{width:37px;height:37px;flex:none;border:1px solid #4d9575;display:grid;place-items:center;border-radius:50%;font-size:22px;color:#ddffab}
+.protocol-badge strong{display:block;font:700 17px 'Rajdhani',sans-serif;color:#dcffce;letter-spacing:.7px;margin:2px 0}
+.protocol-badge p{font-size:11px;margin:2px 0 5px}.protocol-badge small{font-size:10px;color:#80c2ab}
+.protocol-callout{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:#113729;border-left:3px solid #beee9c;padding:12px;margin:18px 0}
+.protocol-callout button,.protocol-profile a{background:#1f755a;color:#edffe9;border:1px solid #5adbaa;padding:9px 12px;min-height:40px;text-decoration:none;font:700 12px inherit;cursor:pointer;display:inline-block}
+.protocol-callout code{color:#d7ffa0}
+.protocol-projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.protocol-project{min-width:0;background:#0d2826;border:1px solid #2b5b51;padding:14px}
+.protocol-project h4{margin:4px 0 6px;color:#d4ffdd}.protocol-project h4 small{font-size:10px;color:#bdf592}
+.protocol-pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.protocol-pills>span{font-size:10px;color:#b7ecce;border:1px solid #3e7864;background:#183a2e;padding:3px 8px}
+.protocol-note{margin:18px 0!important;font-size:11px!important}
+.protocol-profile{padding:18px;background:#0d2925;border:1px solid #347358}
+.protocol-profile h4{font-size:clamp(22px,4cqw,35px);margin:5px 0}.protocol-profile>strong{color:#dbfd95;font-size:16px}
+.protocol-profile a{margin-top:14px}
+.protocol-map{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.protocol-map-node{display:flex;gap:12px;align-items:center;text-align:left;background:#102a29;border:1px solid #2e6c59;padding:14px;min-width:0;min-height:74px;cursor:pointer}
+.protocol-map-node:hover,.protocol-map-node:focus-visible{border-color:#d4fd99;background:#174138}
+.protocol-map-node>span:nth-child(2){flex:1;min-width:0}.protocol-map-node strong{display:block;font:700 15px 'Rajdhani',sans-serif;color:#deffbb;letter-spacing:.5px}
+.protocol-map-node small{display:block;color:#a9caba;font-size:10px;margin-top:3px}.protocol-map-icon{font-size:25px;color:#8afbd1;flex:none}
+@container protocol-window (max-width:600px){.protocol-badges,.protocol-projects,.protocol-map{grid-template-columns:1fr}.protocol-app{padding:13px}.protocol-heading{align-items:flex-start}.protocol-project,.protocol-badge{padding:10px}}
+@media (prefers-reduced-motion:reduce){.protocol-app *{transition:none!important;animation:none!important}}

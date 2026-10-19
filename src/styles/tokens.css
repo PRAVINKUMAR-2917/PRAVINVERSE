@@ -1,0 +1,16 @@
+@import '@fontsource/rajdhani/600.css';
+@import '@fontsource/rajdhani/700.css';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/700.css';
+:root {
+  --void: #030712; --deep: #010409; --green: #00ff88; --cyan: #00e5ff; --violet: #a855f7;
+  --gold: #ffd166; --crimson: #ff3158; --muted: #94a3b8; --bright: #f8fafc;
+  --accent: var(--green); --accent-2: var(--cyan);
+  --glass: rgba(6, 14, 28, .72); --line: color-mix(in srgb, var(--accent) 38%, transparent);
+  --font-display: 'Rajdhani', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Consolas, monospace;
+  --t-fast: 120ms; --t-med: 240ms; --ease: cubic-bezier(.2, .8, .2, 1);
+  --taskbar: 56px;
+}
+[data-theme='cyan'] { --accent: var(--cyan); --accent-2: var(--violet); }
+[data-theme='violet'] { --accent: var(--violet); --accent-2: var(--cyan); }

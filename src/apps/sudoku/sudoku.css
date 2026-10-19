@@ -1,0 +1,90 @@
+.win-body:has(>.sudoku-app){padding:0;min-width:0;min-height:0;overflow:auto;container:sudoku-window / inline-size}
+.sudoku-app{color:#d1ffeb;font-family:inherit;box-sizing:border-box;width:100%;min-height:100%;padding:14px;background:linear-gradient(145deg,#081c1b,#051010);}
+.sudoku-app *{box-sizing:border-box}
+.sudoku-top{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid #276e57;padding-bottom:11px;margin-bottom:12px}
+.sudoku-top h3{font-size:22px;letter-spacing:2px;color:#57f6bb;margin:0}.sudoku-top h3 span{color:#d9ff81}.sudoku-top p{margin:3px 0 0;color:#79ad9b;font-size:10px;letter-spacing:1px}
+.sudoku-top label{display:flex;align-items:center;gap:8px;color:#9ddbbf;font-size:11px;white-space:nowrap}
+.sudoku-top select{background:#102c27;color:#daffe9;border:1px solid #36b88a;padding:7px;font:inherit;max-width:140px}
+.sudoku-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(175px,225px);gap:16px;align-items:start}
+.sudoku-left{min-width:0;max-width:570px;width:100%;margin:auto}
+.sudoku-stats{display:flex;justify-content:space-between;gap:6px;font-size:12px;letter-spacing:.5px;color:#b3efcc;padding-bottom:8px}
+.sudoku-grid{position:relative;width:100%;aspect-ratio:1;background:#10473d;border:2px solid #4cecb1;box-shadow:0 0 22px #0ad88d24;display:flex;flex-direction:column}
+.sudoku-row{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));flex:1 1 0;min-height:0}
+.sudoku-cell{position:relative;min-width:0;min-height:0;display:flex;align-items:center;justify-content:center;padding:0;border:0;border-right:1px solid #37645b;border-bottom:1px solid #37645b;border-radius:0;background:#0d2a28;color:#91eec8;font:600 clamp(13px,2.4cqw,24px) 'Rajdhani',sans-serif;cursor:pointer;transition:background .1s}
+.sudoku-row:nth-child(odd) .sudoku-cell:nth-child(odd),.sudoku-row:nth-child(even) .sudoku-cell:nth-child(even){background:#11342f}
+.sudoku-cell.fixed{color:#f4fff7;font-weight:800}.sudoku-cell.peer{background:#19473a!important}.sudoku-cell.match{background:#235f49!important;color:#d8ff8c}.sudoku-cell.active{background:#2d825f!important;outline:2px solid #e0fd6b;outline-offset:-2px;z-index:1}.sudoku-cell.error{color:#ff718c!important;background:#692c38!important}
+.sudoku-cell.box-bottom{border-bottom:3px solid #57b88e}.sudoku-cell.box-right{border-right:3px solid #57b88e}.sudoku-cell:focus-visible{outline:3px solid #fff5a1;outline-offset:-3px;z-index:2}
+.sudoku-notes{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);width:100%;height:100%;padding:2px;align-items:center;font-size:clamp(8px,1.05cqw,12px);font-weight:500;color:#c7f5b1}
+.sudoku-candidate{position:absolute;bottom:2px;font-size:12px}
+.sudoku-numpad{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:3px;margin-top:10px}
+.sudoku-numpad button,.sudoku-actions button,.sudoku-help-btn,.sudoku-finished button,.sudoku-curtain button{font:inherit;font-weight:700;border:1px solid #2d9a71;background:#10372e;color:#c9ffe4;cursor:pointer;border-radius:3px;min-height:39px;padding:5px}
+.sudoku-numpad button{font-size:clamp(15px,2cqw,21px)}.sudoku-app button:hover:not(:disabled){background:#276e50}.sudoku-app button:disabled{opacity:.45;cursor:default}.sudoku-actions .on{background:#39682e;border-color:#b9f78c;color:#edffca}
+.sudoku-progress{margin-top:9px;display:flex;justify-content:space-between;flex-wrap:wrap;font-size:10px;letter-spacing:1px;color:#a9d5bc}.sudoku-progress>div{width:100%;height:5px;background:#143e32;margin-top:5px}.sudoku-progress>div>span{display:block;height:100%;background:#55f3a9;transition:width .2s}
+.sudoku-sidebar{display:flex;flex-direction:column;gap:10px;min-width:0}.sudoku-banner{padding:10px;border:1px solid #27634e;color:#bafee0;font-size:12px;min-height:40px}.sudoku-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.sudoku-actions button{min-height:43px;font-size:11px}.sudoku-error-toggle{display:flex;align-items:center;gap:7px;font-size:11px;color:#b2ebc6}.sudoku-error-toggle input{accent-color:#51f3b4}.sudoku-help-btn{font-size:11px}.sudoku-help{border-left:2px solid #7ef3b3;background:#163327;padding:9px;color:#c8efdc;font-size:11px;line-height:1.6}.sudoku-info{padding-top:9px;border-top:1px solid #2b5c4b;font-size:11px;color:#83a998;line-height:1.9}
+.sudoku-curtain,.sudoku-finished{position:absolute;inset:0;z-index:4;background:#071b18ec;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;text-align:center;padding:12px}.sudoku-curtain strong,.sudoku-finished strong{font-size:clamp(18px,4cqw,34px);color:#bfff83;letter-spacing:3px}.sudoku-finished span{font-size:14px}.sudoku-curtain button,.sudoku-finished button{padding:8px 20px}
+@container sudoku-window (max-width:690px){.sudoku-layout{grid-template-columns:1fr}.sudoku-left{max-width:min(100%,500px)}.sudoku-sidebar{max-width:500px;width:100%;margin:auto}.sudoku-top{align-items:flex-start}.sudoku-top h3{font-size:18px}.sudoku-top p{font-size:9px}.sudoku-cell{font-size:clamp(15px,4.6cqw,24px)}.sudoku-notes{font-size:clamp(7px,2.1cqw,12px)}.sudoku-actions{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (prefers-reduced-motion:reduce){.sudoku-app *{transition:none!important;animation:none!important}}
+
+/* Phase 4 screen-fit fix: size the board to BOTH the width and the usable
+   height of its desktop window, rather than just its width. This also keeps
+   the controls reachable on phones and very short windows. */
+.win-body:has(> .sudoku-app) {
+  container: sudoku-window / size;
+  min-height: 0;
+  min-width: 0;
+  overflow: auto;
+}
+.sudoku-app {
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.sudoku-layout {
+  flex: 1 1 auto;
+  min-height: 0;
+  grid-template-columns: minmax(0, 1fr) minmax(175px, 215px);
+  align-items: start;
+}
+.sudoku-left {
+  /* Reserve vertical space for the header, stats, number pad, and progress. */
+  width: min(100%, 570px, max(180px, calc(100cqh - 205px)));
+  max-width: 100%;
+}
+.sudoku-grid {
+  width: 100%;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+.sudoku-numpad button { min-width: 0; }
+@container sudoku-window (max-height: 610px) and (min-width: 691px) {
+  .sudoku-app { padding: 9px 12px; }
+  .sudoku-top { padding-bottom: 5px; margin-bottom: 6px; }
+  .sudoku-top h3 { font-size: 18px; }
+  .sudoku-stats { padding-bottom: 4px; }
+  .sudoku-numpad { margin-top: 5px; }
+  .sudoku-numpad button { min-height: 32px; }
+  .sudoku-progress { margin-top: 5px; }
+  .sudoku-left { width: min(100%, 570px, max(180px, calc(100cqh - 160px))); }
+  .sudoku-sidebar { gap: 6px; }
+  .sudoku-actions button { min-height: 36px; }
+}
+@container sudoku-window (max-width: 690px) {
+  /* A narrow window/phone cannot show a useful 9x9 board beside the panel.
+     Keep the complete board and keypad visible; scroll only for the side tools. */
+  .sudoku-app { height: auto; min-height: 100%; padding: 10px; }
+  .sudoku-layout { display: flex; flex-direction: column; flex: none; gap: 10px; }
+  .sudoku-left { width: 100%; max-width: min(100%, 470px); margin-inline: auto; }
+  .sudoku-sidebar { max-width: 470px; width: 100%; margin-inline: auto; }
+  .sudoku-top { flex-wrap: wrap; margin-bottom: 8px; padding-bottom: 8px; }
+  .sudoku-stats { padding-bottom: 5px; }
+  .sudoku-numpad { margin-top: 6px; }
+  .sudoku-numpad button { min-height: 40px; padding: 3px 0; }
+  .sudoku-actions { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@container sudoku-window (max-width: 360px) {
+  .sudoku-top h3 { font-size: 16px; }
+  .sudoku-top label { font-size: 10px; }
+  .sudoku-numpad button { min-height: 34px; }
+  .sudoku-actions button { font-size: 10px; }
+}
