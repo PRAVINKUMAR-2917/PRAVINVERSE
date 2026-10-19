@@ -17,7 +17,7 @@ export function AchievementsApp({ ach, onOpenTerminal }: { ach: AchState; onOpen
     <h4>BADGE COLLECTION</h4>
     <div className="protocol-badges">{ACH.map(a => <article key={a.id} className={`protocol-badge ${ach.unlocked[a.id] ? 'earned' : 'locked'}`}>
       <div className="protocol-medal" aria-hidden="true">{ach.unlocked[a.id] ? '✦' : '◇'}</div>
-      <div><span className="protocol-tag">{a.rarity} · +{a.xp} XP</span><strong>{a.name}</strong><p>{a.how}</p><small>{ach.unlocked[a.id] ? `UNLOCKED · ${new Date(ach.unlocked[a.id]).toLocaleDateString()}` : 'LOCKED'}</small></div>
+      <div><span className="protocol-tag">{a.rarity} · +{a.xp} XP</span><strong>{a.name}</strong><p>{a.how}</p><small>{ach.unlocked[a.id] ? `UNLOCKED · ${new Date(ach.unlocked[a.id]!).toLocaleDateString()}` : 'LOCKED'}</small></div>
     </article>)}</div>
     <div className="protocol-callout"><p><strong>Secret challenges:</strong> Three hidden badges are waiting in the terminal. Run <code>secrets</code> for your first clue.</p><button onClick={onOpenTerminal}>OPEN TERMINAL →</button></div>
   </div>;

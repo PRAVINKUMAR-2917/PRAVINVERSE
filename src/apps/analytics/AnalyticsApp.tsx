@@ -32,7 +32,7 @@ function Visualization({ data, kind }: { data: Point[]; kind: ChartKind }) {
         <span title={p.name}>{p.name}</span><strong>{(Math.max(0, p.value) / total * 100).toFixed(1)}%</strong></div>)}</div>
     </div>;
   }
-  const height = 285, left = 58, top = 25, plotH = 195, plotW = 820, xStep = plotW / data.length;
+  const left = 58, top = 25, plotH = 195, plotW = 820, xStep = plotW / data.length;
   const maxAxis = Math.max(max * 1.16, 1);
   const baseline = top + plotH;
   const values = data.map((p, i) => ({ x: left + xStep * (i + .5), y: baseline - Math.max(0, p.value) / maxAxis * plotH }));
